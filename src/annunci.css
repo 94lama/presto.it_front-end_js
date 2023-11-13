@@ -1,0 +1,81 @@
+
+main{
+    margin-top: 8rem;
+}
+
+#sideMenu{
+    position:absolute;
+    left: 10px;
+    top: 5rem;
+    min-width: fit-content;
+    animation: floating 4s linear infinite;
+    transition: .5s;
+    opacity: 0.8;
+    z-index: 2;
+    height: fit-content;
+}
+#sideMenu:hover{
+animation-play-state: paused;
+scale: 1.1;
+opacity: 1;
+}
+
+#sideMenu *{
+    color: var(--bs-color-white);
+}
+
+.wordSearcher{
+    max-width: 15vw;
+}
+
+/* ///[card] */
+.ultimiAnnunciWrapperCard{
+    display: flex !important;
+    flex-direction: column;
+}
+
+.ultimiAnnunciWrapperCard img{
+    width: 100%;
+    aspect-ratio: 1 / 1 !important;
+}
+
+/* ///[Keyframes] */
+@keyframes floating{
+    0%{
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    25%{
+        transform: translate3d(10px, 10px, 1rem);
+    }
+
+    37.5%{
+        transform: translate3d(12.5px, 5px, 0.5rem);
+    }
+
+    50%{
+        transform: translate3d(10px, 0px, 0px);
+    }
+
+    75%{
+        transform: translate3d(0px, 10px, 1rem);
+    }
+
+    87.5%{
+        transform: translate3d(-2.5px, 5px, 5rem);
+    }
+
+    100%{
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+/* ///[Media queries] */
+@media screen and (min-width:1200px) {
+    #sideMenu{
+        position: sticky;
+        top: 6rem;
+        margin: 0;
+    }
+    
+}

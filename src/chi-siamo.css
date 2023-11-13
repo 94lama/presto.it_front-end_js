@@ -1,0 +1,109 @@
+:root{
+    --size: 30rem;
+}
+
+
+#peopleWrapper{
+    height: var(--size);
+    width: var(--size);
+}
+
+#sun{
+    position: absolute;
+    top: calc(50% - var(--size) /2);
+    left: calc(50% - var(--size) /2);
+    height: var(--size);
+    width: var(--size);
+    box-shadow: 0 0 100px #f6d186;
+    background-image: url("../media/sun.jpg");
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: revolution 60s linear infinite/*  delay iteration-count direction fill-mode */;
+    transform: rotate(10deg);
+    transition: 2s;
+    z-index: 1;
+}
+
+#sun:hover{
+    box-shadow: 0 0 300px #f6d186;
+}
+
+.planet-teach{
+    position:absolute;
+    top: calc(50% - var(--size)*.25);
+    left: calc(50% - var(--size)*.25);
+    background-size: contain;
+    animation: rotation 12s infinite/* timing-function delay iteration-count direction fill-mode */;
+    transition: 2s;
+    z-index: -1;
+}
+
+.planet-teach:hover{
+    animation-play-state: paused;
+    scale: 1.2;
+    transition: 0.5s;
+}
+
+.selected-planet{
+    z-index: 2;
+    animation: none;
+    top: 20vh;
+
+}
+
+.planet-teach img, .selected-planet img{
+    height: calc(var(--size) * 0.5);
+    width: calc(var(--size) * 0.5);
+}
+
+
+@keyframes revolution{
+    0%{
+        background-position: 0;
+    }
+
+    50%{
+        background-position: 50%;
+    }
+
+    100%{
+        background-position: 100%;
+    }
+}
+
+@keyframes rotation {
+    0%{
+        scale: 0.4;
+        transform: translate3d(0, 0, 15rem);
+        z-index: -1;
+        animation-timing-function: linear;
+    }
+    25%{
+        scale: .9;
+        transform: translate3d(30rem, 5rem, 30rem);
+        animation-timing-function: ease-out;
+        z-index: -1;
+    }
+    40%{
+        z-index: 2;
+    }
+    50%{
+        scale: 1.5;
+        transform: translate3d(0, 0, 40rem);
+        animation-timing-function: linear;
+        z-index: 2;
+    }
+    75%{
+        scale: 1;
+        transform: translate3d(-30rem, -5rem, 30rem);
+        animation-timing-function: ease-in;
+        z-index: 2;
+    }
+    90%{
+        z-index: -1;
+    }
+    100%{
+        transform: translate3d(0, 0, 15rem);
+        animation-timing-function: ease-in;
+    }
+}

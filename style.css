@@ -1,0 +1,339 @@
+:root {
+    --bs-color-white: #e2e3e3;
+    --bs-primary: #0146c0;
+    --bs-secondary: #351077;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #ea505a;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 1, 70, 192;
+    --bs-secondary-rgb: 53, 16, 119;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 234, 80, 90;
+    --bs-light-rgb: 248,249,250;
+    --bs-dark-rgb: 0, 0, 34;
+    /* --bs-bg-opacity: 0.2; */
+    --bs-tertiary-bg-rgb: 0, 0, 34;
+}
+
+@font-face {
+    font-family: GameOfSquids;
+    src: url('./media/font/Game-of-squids/Game\ Of\ Squids.otf');
+}
+
+* {
+    font-family: 'Roboto Mono', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* TEXT */
+h1 {
+    height: 85px;
+    font-size: 90px;
+    margin-top: 42vh;
+    font-family: GameOfSquids;
+    padding-right: 15rem;
+    width: 680px;
+    line-height: 85px;
+    max-width: 100%;
+    min-width: 50vw;
+    margin-left: calc(50vw - 5rem - 265px);
+}
+
+h2 {
+    color: var(--bs-primary);
+}
+
+/* NAVBAR */
+nav{
+    height: 5rem;
+    transition: 1s;
+}
+
+.logo {
+    width: 2rem;
+    rotate: -135deg;
+}
+
+.nav-link {
+    color: var(--bs-color-white);
+}
+
+
+/* HEADER */
+.bg-universe {
+    background: rgba(0, 0, 0, 0.4) url('./media/background-header.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    z-index: -999;
+}
+
+.planet1 {
+    position: absolute;
+    height: 100vh;
+    background-image: url('./media/planet.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+}
+
+header .logo {
+    width: 8rem;
+    position: absolute;
+    top: calc(45vh - 6rem);
+    left: calc(50vw - 5rem);
+    rotate: 0deg;
+    animation: landing 3s ease-in-out 1s
+        /* timing-function delay iteration-count direction fill-mode */
+    ;
+}
+
+h1 span {
+    margin: 1rem;
+    padding: 0;
+}
+
+
+/* DA NON CREDERCI */
+
+#informazioni {
+    box-shadow: 0 -20px 60px #222;
+    margin-top: 100vh;
+}
+
+.container{
+    max-width: 100vw;
+}
+
+.launch {
+    width: 10rem;
+    margin: auto;
+}
+
+/* RECENSIONI */
+.swiper-slide-next, .swiper-slide-prev{
+    opacity: 0.3 !important;
+}
+
+#reviews{
+    height: 30vh;
+}
+
+.stars {
+    max-width: 20%;
+    margin: auto;
+}
+
+
+/* VELOCI */
+.planet, .selectedPlanet{
+    height: 30rem;
+    width: 30rem;
+    max-height: 70vh;
+    max-width: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.selectedPlanet{
+    background: url('./media/planetCard.svg');
+    background-size: cover;
+    box-shadow: 0 0 10px var(--bs-warning);
+}
+
+.planet:hover, .selectedPlanet:hover{
+    background: url('./media/planetCard.svg');
+    background-size: cover;
+    box-shadow: 0 0 40px var(--bs-warning);
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.planet:nth-child(1), .selectedPlanet:nth-child(1){
+    height: 25rem;
+    width: 25rem;
+    top: 20vh;
+    left: -5vw;
+}
+.planet:nth-child(2), .selectedPlanet:nth-child(2){
+    height: 30rem;
+    width: 30rem;
+    left: 20rem;
+    rotate: 30deg;
+}
+.planet:nth-child(3), .selectedPlanet:nth-child(3){
+    height: 20rem;
+    width: 20rem;
+    top: 50vh;
+    left: -5vw;
+    rotate: -10deg
+}
+
+.logo-mover{
+    position:relative;
+    top: -10vw;
+    left: -10vw;
+    rotate: 190deg;
+    animation: orbit;
+    transition-duration: 3s;
+}
+
+
+/* Ultimi annunci */
+.ultimiAnnunciWrapperCard{
+    display: grid !important;
+    grid-template-areas: 'img img' 'h4 h4' 'p p' 'h5 h5' 'acquista button';
+}
+
+.like{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(var(--bs-secondary-rgb));
+    color: var(--bs-color-white);
+    border: 0;
+    border-radius: 50%;
+    margin-left: auto;
+    transition: 0.5s;
+}
+.like:hover{
+    transform: scale(1.2);
+    background-color: transparent;
+    color: var(--bs-secondary);
+}
+
+.ultimiAnnunciWrapperCard > *{
+    margin: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ultimiAnnunciWrapperCard img{
+    object-fit: cover;
+    border-radius: 2rem;
+    margin: 0;
+    width: 100%;
+}
+
+.ultimiAnnunciWrapperCard h5{
+    margin: auto;
+}
+
+.acquista{
+    height: 3rem;
+    width: 3rem;
+    justify-self: center;
+    border-radius: 1.5rem;
+}
+
+/* Annunci */
+
+.accordion-body{
+    background-color: var(--bs-light-rgb);
+}
+
+
+/* bottone per andare ad inizio pagina */
+.fa-shuttle-space{
+    rotate: -90deg;
+    animation: floating 2s linear 0s infinite;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+/* ------------------------------------------------------------------- */
+
+/* QUERIES */
+
+@keyframes landing {
+    0% {
+        left: 0rem;
+        rotate: -135deg;
+        scale: .2;
+    }
+
+    55% {
+        rotate: -95deg;
+        top: calc(25vh - 6rem);
+        scale: .4;
+    }
+
+    85% {
+        top: calc(25vh - 6rem);
+        rotate: -20deg;
+        scale: 0.8;
+    }
+
+    100% {}
+}
+
+@keyframes floating{
+    0%{
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    25%{
+        transform: translate3d(10px, 10px, 1rem);
+    }
+
+    37.5%{
+        transform: translate3d(12.5px, 5px, 0.5rem);
+    }
+
+    50%{
+        transform: translate3d(10px, 0px, 0px);
+    }
+
+    75%{
+        transform: translate3d(0px, 10px, 1rem);
+    }
+
+    87.5%{
+        transform: translate3d(-2.5px, 5px, 5rem);
+    }
+
+    100%{
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        display: none;
+    }
+
+    .planet1 {
+        display: none;
+    }
+
+    .planet{
+        top:0 !important;
+        left:0 !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .acquista::after{
+        content: 'Acquista';
+    }
+    
+    .ultimiAnnunciWrapperCard{
+        align-content: space-around;
+    }
+    .like{
+    margin: auto;
+    }
+
+    .acquista{
+        height: 3rem;
+        width: 10rem;
+        justify-self: center;
+    }
+}
